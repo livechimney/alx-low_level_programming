@@ -1,4 +1,3 @@
-#!/bin/bash
 #include<stdio.h>
 /**
  * maain Entry point

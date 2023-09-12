@@ -2,15 +2,15 @@
 /**
  * main - prints the lowercase aplhabet in reverse
  * followed by new line
- * Return: Always 0 (Success)
+ * Return: Always 0(Success)
  */
 int main(void)
 {
-	char ch;
-	for (ch='z';ch>='a';ch--)
-	{
-		putchar(ch)
-	}
-	putchar('\n')
-	return(0)
+char ch;
+for (ch = 'z'; ch >= 'a'; ch--)
+{
+putchar (ch);
+}
+putchar ('\n');
+return (0);
 }

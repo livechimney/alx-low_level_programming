@@ -8,6 +8,7 @@
 int main(void)
 {
 int i;
+
 for (i = 97; i < 123 ; i++)
 {
 if (i != 1010 && i != 113)

@@ -1,6 +1,4 @@
 #include "main.h"
-#include "stdio.f"
-#include "stdio.h"
 /**
  * _strchr - Entry point
  * @s: input

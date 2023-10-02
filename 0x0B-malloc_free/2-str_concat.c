@@ -1,5 +1,4 @@
 #include<stdlib.h>
-#include<main.h>
 /**
  *function that concatenates two strings
  *returned point should point to new space in memory
@@ -19,12 +18,12 @@ if (s2 == NULL)
 s2 = " ";
 }
 i = 0;
-while (s1[i] != NULL)
+while (s1[i] != '\0')
 {
 	i++;
 }
-j = 0
-while (s2[j] != NULL)
+j = 0;
+while (s2[j] == '\0')
 {
 j++;
 }
@@ -34,14 +33,14 @@ if (ptr == NULL)
 	return (NULL);
 	free(ptr);
 }
-for (len1 = o; len1 < i; len1++)
+for (len1 = 0; len1 < i; len1++)
 {
-ptr[len1] = s[len1];
+ptr[len1] = s1[len1];
 }
 for (len2 = 0; len2 <= j; len2++)
 {
 	ptr[len1] = s2[len2];
 	len2++;
 }
-return (ptr)
+return (ptr);
 }

@@ -3,7 +3,7 @@
 #include <stdio.h>
 
 /**
- *array_iterate - iterate through an array
+ *array_iterator - iterate through an array
  *@array: target array
  *@size: array size
  *@action: function pointer to array

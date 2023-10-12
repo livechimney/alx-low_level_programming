@@ -1,21 +1,22 @@
 #include "variadic_functions.h"
 /*
- * print_string - print stings passed to a function
+ * print_strings - Print strings, followed by new line.
  * as parameter
  * @separator: separator btwn two strings
  * @n: number of strings to print
+ * Description: if one of strings is NULL, (nil) is printed
  */
 void print_strings(const char *separator, const unsigned int n, ...)
 {
 unsigned int i;
 char *str;
 
-va_list ptr_str;
-va_start(ptr_str, n);
+va_list strings;
+va_start(strings, n);
 
 for (i = 0; i < n; i++)
 {
-	str = va_arg(ptr_str, char *);
+	str = va_arg(strings, char *);
 	if (str == NULL)
 	{
 		printf("(nil)");
@@ -29,6 +30,6 @@ for (i = 0; i < n; i++)
 		printf("%s", separator);
 }
 printf("\n");
-va_end(ptr_str);
+va_end(strings);
 
 }

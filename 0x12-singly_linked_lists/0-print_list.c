@@ -14,7 +14,9 @@ if (h == NULL)
 for (a = 1; h->next != NULL; a++)
 {
 	if (h->str == NULL)
+	{
 		printf("[%lu] %s\n", h->len, "(nil)");
+	}
 	else
 	{
 		printf("[%lu] %s\n", h->len, h->str);

@@ -38,11 +38,20 @@ void simple_print_buffer(char *buffer, unsigned int size)
  */
 int main(void)
 {
-    char *p;
+    char *p = NULL;
     int i;
 
     p = malloc(sizeof(char) * 10);
+    if (p == NULL)
+    {
+	    return (1);
+    }
     p = _realloc(p, sizeof(char) * 10, sizeof(char) * 98);
+    if (p == NULL)
+    {
+	    return (1);
+    }
+    
     i = 0;
     while (i < 98)
     {

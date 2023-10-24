@@ -3,7 +3,8 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-
+#include <stdarg.h>
+#include <string.h>
 /**
  * struct listint_t - self referencial struct
  * for creating nodes of singly linked list

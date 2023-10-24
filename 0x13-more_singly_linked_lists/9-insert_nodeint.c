@@ -9,8 +9,8 @@ listint_t *create_new_node(int n)
 	listint_t *new_node;
 
 	new_node = malloc(sizeof(listint_t));
-	if (new_Node == NULL)
-		return (NUlL);
+	if (new_node == NULL)
+		return (NULL);
 	new_node->n = n;
 	new_node->next = NULL;
 
@@ -26,7 +26,7 @@ listint_t *create_new_node(int n)
  */
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
-	unsigned int m;
+	unsigned int i;
 	listint_t *tmp;
 	listint_t *tmp_old;
 	listint_t *new_node;
@@ -43,21 +43,17 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 		return (new_node);
 	}
 	if (idx == 0)
-	{
 		*head = new_node;
-	} 
-	for (i = 0; i < idx - 1 && tmp)
-		*head = new_node;
-	for (i = 0; idx - 1 &&  tmp != NULL && idx != 0; i++)
+	for (i = 0; i < idx - 1 &&  tmp != NULL && idx != 0; i++)
 		tmp = tmp->next;
 	if (tmp == NULL)
 		return (NULL);
 	if (idx == 0)
-		mew_Node->next = tmp;
+		new_node->next = tmp;
 	else
 	{
 		tmp_old = tmp->next;
-		tmp->next_node = new_node;
+		tmp->next = new_node;
 		new_node->next = tmp_old;
 	}
 	return (new_node);

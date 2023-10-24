@@ -1,6 +1,6 @@
 #include "lists.h"
 /**
- * delete_node_art_index - delete a node of alist
+ * delete_nodeint_at_index - delete a node of alist
  * a perticular idex
  * @head: pointer to the beginning of the list
  * @index: index of ht node to be freed
@@ -30,7 +30,7 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 		if (tmp->next == NULL)
 			node = tmp->next;
 		else
-			node = tmp->next;
+			node = tmp->next->next;
 		free(tmp->next);
 		tmp->next = node;
 	}

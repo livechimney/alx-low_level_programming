@@ -1,49 +1,45 @@
 #include "search_algos.h"
 
 /**
- * binary_search - Searches for a value in a sorted array
- *                 of integers using binary search.
- * @array: A pointer to the first element of the array to search.
- * @size: The number of elements in the array.
- * @value: The value to search for.
+ * binary_search - searches for a value in an integer array using a binary
+ * search algorithm, not guaranteed to return lowest index if `value` appears
+ * twice in `array`
+ * @array: pointer to first element of array to seach
+ * @size: number of elements in array
+ * @value: value to search for
  *
- * Return: If the value is not present or the array is NULL, -1.
- *         Otherwise, the index where the value is located.
+ * Return: index containing `value`, or -1 if `value` not found or
+ * `array` is NULL
  */
 
 int binary_search(int *array, size_t size, int value)
 {
-	size_t i, left, right;
-	
-	/* Check if the array is NULL */
-	if (array == NULL)
-		return (-1);
+	int low, mid, high;
+	int x;
 
-	/* Perform binary search */
-	for (left = 0, right = size - 1; right >= left;)
+	if (array == NULL)
 	{
-		printf("Searching in array: ");
-		for (i = left; i < right; i++)
-			printf("%d, ", array[i]);
-		printf("%d\n", array[i]);
-		
-		/* Calculate the middle index */
-		i = left + (right - left) / 2;
-		
-		/* If the middle element is the value */
-		if (array[i] == value)
-			/* Return the index */
-			return (i);
-		
-		/* If the middle element is greater than the value */
-		if (array[i] > value)
-			/* Update the right boundary */
-			right = i - 1;
-		else
-			/* Otherwise, update the left boundary */
-			left = i + 1;
+		return (-1);
 	}
-	/* Value not found, return -1 */
+
+	low = 0;
+	high = size - 1;
+
+	while (low <= high)
+	{
+		mid = (low + high) / 2;
+
+		printf("Searching in array: ");
+		for (x = low; x <= high; x++)
+			printf("%i%s", array[x], x == high ? "\n" : ", ");
+
+		if (array[mid] < value)
+			low = mid + 1;
+		else if (array[mid] > value)
+			high = mid - 1;
+		else
+			return (mid);
+	}
+
 	return (-1);
 }
-
